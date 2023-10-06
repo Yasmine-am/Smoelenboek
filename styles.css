@@ -1,6 +1,7 @@
 .customcollor{
     outline-color: #090!important; 
 }
+/* custom knop kleur */
 .btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active, .open>.dropdown-toggle.btn-outline-success {
     color: #fff !important;
     background-color: #090 !important;

@@ -14,15 +14,16 @@
 </head>
 
 <body>
-    <!-- Control the column width, and how they should appear on different devices -->
     <!-- grid  -->
 
     <!-- Logo row + welcome text -->
     <div class="row">
         <div class="col-1">
+            <!--kpn logo en link naar home pagina-->
             <a href="home.html"><img src="kpn-2-logo.png" class="float-start img-fluid" alt="logo"></a>
         </div>
         <div class="col-11">
+            <!-- titel -->
             <h1 class="display-2 text-center"> Mijn informatie</h1>
         </div>
     </div>
@@ -30,6 +31,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-11">
+            <!-- ondertitel -->
             <h1 class="display-6 text-center"> Update hier uw persoonlijke informatie </h1>
         </div>
     </div>
@@ -38,6 +40,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- invoerveld -->
             <form action="/action_page.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text">Voornaam</span>
@@ -51,6 +54,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- invoerveld -->
             <form action="/action_page.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text">Achternaam</span>
@@ -64,6 +68,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- invoerveld -->
             <form action="/action_page.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text">Telefoonnummer</span>
@@ -75,6 +80,7 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
+                <!-- invoerveld -->
                 <form action="/action_page.php">
                     <div class="input-group mb-3">
                         <span class="input-group-text">@</span>
@@ -88,6 +94,7 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
+                <!-- invoerveld -->
                 <form action="/action_page.php">
                     <div class="input-group mb-3">
                         <span class="input-group-text">Wachtwoord</span>
@@ -98,34 +105,55 @@
             <div class="col-1"></div>
         </div>
         <div class="col-1"></div>
-
-    </div>  
-
+    </div>   
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <!-- vraag -->
+           <p >Van welke teamsoort ben jij onderdeel?</p>
+        </div>
+        <div class="col-1"></div>
+    </div> 
      <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-            <form action="/action_page.php">
-                <div class="input-group mb-3">
-                    <!-- wordt dropdown -->
-                    <span class="input-group-text">Teamsoort</span>
-                    <input type="text" class="form-control" placeholder="TAM of DBA" name="teamSoort">
-                </div>
-            </form>
+            <!-- dropdown -->
+            <div class="dropdown">
+                <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown">
+                  Teamsoort
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">TAM</a></li>
+                  <li><a class="dropdown-item" href="#">DBA</a></li>
+                </ul>
+              </div>
         </div>
         <div class="col-1"></div>
     </div>   
-
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <!-- vraag -->
+           <p >Van welk team ben jij onderdeel?</p>
+        </div>
+        <div class="col-1"></div>
+    </div> 
      <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-            <form action="/action_page.php">
-                <div class="input-group mb-3">
-                    <!-- wordt dropdown -->
-                    <span class="input-group-text">Teamnaam</span>
-                    <input type="text" class="form-control" placeholder="TAM 1, TAM 2, TAM 3, DBA MSsql, DBA Oracle" name="teamNaam">
-                </div>
-            </form>
-
+            <!-- dropdown -->
+            <div class="dropdown">
+                <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown">
+                  Teamnaam
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">TAM 1</a></li>
+                  <li><a class="dropdown-item" href="#">TAM 2</a></li>
+                  <li><a class="dropdown-item" href="#">TAM 3</a></li>
+                  <li><a class="dropdown-item" href="#">DBA Oracle</a></li>
+                  <li><a class="dropdown-item" href="#">DBA MSsql</a></li>
+                </ul>
+              </div>
         </div>
         <div class="col-1"></div>
     </div>  
@@ -133,6 +161,7 @@
      <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- invoerveld -->
             <form action="/action_page.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text">Rol</span>
@@ -146,6 +175,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- vraag -->
            <p >Kan je, op de meest basale manier, uitleggen wat jouw werk inhoudt?</p>
         </div>
         <div class="col-1"></div>
@@ -153,6 +183,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- invoerveld -->
             <form action="/action_page.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text">Werkbeschrijving</span>
@@ -166,6 +197,7 @@
      <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- vraag -->
             <p >Wat is jouw specialisme binnen het team?</p>
         </div>
         <div class="col-1"></div>
@@ -174,6 +206,7 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- invoerveld -->
             <form action="/action_page.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text">Specialisme</span>
@@ -187,12 +220,14 @@
      <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- vraag -->
             <p >Wat is jouw woonplaats?</p>
         </div>
         <div class="col-1"></div>
     </div>        <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+            <!-- invoerveld -->
             <form action="/action_page.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text">Woonplaats</span>
@@ -207,6 +242,7 @@
     <div class="row">
         <div class="col-5"></div>
         <div class="col-2">
+            <!-- knop -->
             <div class="d-grid">
                 <a href="home.html" class="btn btn-outline-success customcollor">Opslaan</a>
             </div>
