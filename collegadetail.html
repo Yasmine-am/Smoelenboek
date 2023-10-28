@@ -7,8 +7,55 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <title>Collegadetail</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function populateInputFields(data) {
+            document.getElementById('voornaam').innerHTML = data.voornaam;
+            document.getElementById('achternaam').innerHTML = data.achternaam;
+            document.getElementById('werkzaamheden').innerHTML = data.werkzaamheden;
+            // Add code to populate other input fields here
+        }
+    
+        function getIdFromURL() {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get("id");
+        }
+    
+        function loadData() {
+            var id = getIdFromURL(); // Get the ID from the URL
+    
+            if (!id) {
+                alert("Geen ID gevonden in de URL.");
+                return;
+            }
+
+            //voegt de id toe aan de url
+            var apiUrl = "http://localhost:8082/vindcollegabijid/" + id;
+    
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    if (xhr.status == 200) {
+                        console.log(this.responseText);
+                        var colleagueData = JSON.parse(this.responseText);
+                        var eindString = "<div class='col-5'> <a href='mijn_informatie.html?id=" + colleagueData.id + "' class='btn btn-outline-success customcollor'>Wijzig</a>";
+                        document.getElementById("wijzigId").innerHTML = eindString;
+                        if (colleagueData) {
+                            populateInputFields(colleagueData);
+                        } else {
+                            alert("Collega niet gevonden.");
+                        }
+                    } else {
+                        alert("Fout bij het ophalen van gegevens.");
+                    }
+                }
+            }
+            xhr.open("GET", apiUrl, true);
+            xhr.send();
+        }
+    </script>
 </head>
-<body> 
+<body onload="loadData()"> 
 
 <!-- Logo row + First + Lastname row + profile pic -->
     <div class="row">
@@ -16,8 +63,8 @@
             <a href="home.html"><img src="kpn-2-logo.png" class="float-start img-fluid" alt="logo"></a>
         </div>
         <div class="col-9">
-            <h1 class="display-6 text-center">Jane</h1>
-            <h1 class="display-6 text-center">Doe</h1>
+            <h1 class="display-6 text-center" id="voornaam"></h1>
+            <h1 class="display-6 text-center" id="achternaam"></h1>
         </div>
 
         <div class="col-2">
@@ -29,23 +76,9 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-7">
-            <p class="text-center">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
+            <p class="text-center" id="werkzaamheden"></p>
             <br>
-            <p class="text-center">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
+            <p class="text-center"></p>
         </div>
         <div class="col-1"></div>
     </div>
@@ -57,7 +90,10 @@
             <!-- knop -->
             <a href="Collegalijst.html" class="btn btn-outline-success customcollor">Terug</a>
         </div>
-        <div class="col-1"></div>
+
+        <div class="col-1" id="wijzigId">
+            <!-- knop -->
+        </div>
     </div>
 </body>
 </html>
